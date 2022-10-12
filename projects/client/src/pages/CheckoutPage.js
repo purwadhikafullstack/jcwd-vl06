@@ -204,7 +204,7 @@ const CheckoutPage = () => {
         });
       });
 
-      await axios.post(`${API_URL}/invoices/sendNotif`, {
+      axios.post(`${API_URL}/invoices/sendNotif`, {
         invoice_id: response.data.invoice_id,
       });
 
@@ -519,7 +519,6 @@ const CheckoutPage = () => {
           </Card>
         </Block>
 
-        {/* {userAddress[0].name === !"" ? ( */}
         <Modal
           isOpen={view.proceedTransaction}
           toggle={() => onCloseModal()}
@@ -583,30 +582,30 @@ const CheckoutPage = () => {
             </div>
           </ModalBody>
         </Modal>
-        {/* // ) : (
-        //   <Modal
-        //     isOpen={view.noAddress}
-        //     toggle={() => onCloseModal()}
-        //     className="modal-dialog-centered"
-        //     size="sm"
-        //   >
-        //     <ModalBody>
-        //       <div>
-        //         <h4 className="center text-danger">
-        //           <b>Oops!</b>
-        //         </h4>
-        //         <b
-        //           style={{ textAlign: "center" }}
-        //           className="caption-text center"
-        //         >
-        //           There's no main address yet.
-        //           <br></br>
-        //           You can set it on profile settings
-        //         </b>
-        //       </div>
-        //     </ModalBody>
-        //   </Modal>
-        // )} */}
+        {userAddress[0].name === "" ? (
+          <Modal
+            isOpen={view.noAddress}
+            toggle={() => onCloseModal()}
+            className="modal-dialog-centered"
+            size="sm"
+          >
+            <ModalBody>
+              <div>
+                <h4 className="center text-danger">
+                  <b>Oops!</b>
+                </h4>
+                <b
+                  style={{ textAlign: "center" }}
+                  className="caption-text center"
+                >
+                  There's no main address yet.
+                  <br></br>
+                  You can set it on profile settings
+                </b>
+              </div>
+            </ModalBody>
+          </Modal>
+        ) : null}
       </Content>
     </React.Fragment>
   );

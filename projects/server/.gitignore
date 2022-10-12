@@ -24,4 +24,4 @@ yarn-error.log*
 # REST Client
 request.rest
 
-/public/payments
+

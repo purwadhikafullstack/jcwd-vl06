@@ -13,7 +13,7 @@ import moment from "moment";
 
 export const sendOrderNotif = async (req, res) => {
   try {
-    console.log(req.body);
+    // console.log(req.body);
     const result = await InvoiceHeader.findOne({
       include: [
         {
@@ -65,7 +65,7 @@ export const sendOrderNotif = async (req, res) => {
 
     const mail = {
       from: `RAMU <kuperhubid@gmail.com>`,
-      to: `felon.gru1@gmail.com`,
+      to: result.user.email,
       subject: `New Invoice from RAMU`,
       template: "invoice",
       context,

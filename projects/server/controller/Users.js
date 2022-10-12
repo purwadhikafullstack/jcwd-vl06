@@ -178,7 +178,7 @@ export const createUser = async (req, res) => {
 
     let mail = {
       from: "kuperhubid@gmail.com",
-      to: "antarisaryan@gmail.com",
+      to: email,
       subject: "RAMU Account Verification",
       template: "email",
       context: {
@@ -241,7 +241,7 @@ export const sendResetPassLink = async (req, res) => {
 
     let mail = {
       from: "kuperhubid@gmail.com",
-      to: "antarisaryan@gmail.com",
+      to: email,
       subject: "RAMU Account Reset Password",
       template: "resetPass",
       context: {

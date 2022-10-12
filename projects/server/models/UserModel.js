@@ -55,7 +55,7 @@ const Users = db.define(
       defaultValue: true,
     },
     phone: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         validator: function (v) {

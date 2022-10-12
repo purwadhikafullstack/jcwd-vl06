@@ -122,7 +122,9 @@ const ResetPassword = ({ history }) => {
                   color="primary"
                   size="lg"
                   className="btn-block"
-                  // onClick={(ev) => ev.preventDefault()}
+                  onClick={() => {
+                    ResetPassword();
+                  }}
                 >
                   {loading ? (
                     <Spinner size="sm" color="light" />
